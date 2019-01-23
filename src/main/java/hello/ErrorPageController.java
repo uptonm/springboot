@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ErrorPageController {
 
     @GetMapping("/**")
-    public String error(Model model) {
-        return "error";
+    public String index(Model model) {
+        return "index";
     }
 
 }

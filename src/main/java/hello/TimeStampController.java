@@ -11,7 +11,8 @@ import java.text.SimpleDateFormat;
 public class TimeStampController {
 
     @GetMapping("/timestamp")
-    public String timestamp(@RequestParam(name="name", required=false, defaultValue="Fella") String name, Model model) {
+    public String timestamp(@RequestParam(name = "name", required = false, defaultValue = "Fella") String name,
+            Model model) {
         model.addAttribute("name", name);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(Calendar.getInstance().getTime());
         model.addAttribute("date", timeStamp);
