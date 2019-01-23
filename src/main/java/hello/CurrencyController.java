@@ -30,7 +30,14 @@ public class CurrencyController {
             case "USD":
                 return "EUR: €" + value + "   USD: $" + (value * 1.136501);
             case "GBP":
-                return "EUR: €" + value + "   EUR: €" + (value * 0.87200);
+                return "EUR: €" + value + "   GPB: £" + (value * 0.87200);
+            }
+        } else if (from.equals("GBP")) {
+            switch (to) {
+            case "USD":
+                return "GBP: £" + value + "   USD: $" + (value * 1.30);
+            case "EUR":
+                return "GBP: £" + value + "   EUR: €" + (value * 1.15);
             }
         }
         return "Working on it";
