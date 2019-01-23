@@ -3,14 +3,16 @@ package hello;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class CurrencyController {
 
     @RequestMapping("/currency/to/{to}/from/{from}")
-    public String currency(@PathVariable("to") String to, @PathVariable("from") String from, Model model) {
-        String conversion = convert(to, from, 50);
+    public String currency(@PathVariable("to") String to, @PathVariable("from") String from,
+            @RequestParam("value") double value, Model model) {
+        String conversion = convert(to, from, value);
         model.addAttribute("to", to);
         model.addAttribute("from", from);
         model.addAttribute("result", conversion);
